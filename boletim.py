@@ -2,9 +2,15 @@ import time
 import os
 linha = ('-' * 67)
 vazio = (' ')
+
 diretoria = {'professores': ' '}
 alunos = {'nome': ' ', 'idade': ' ', 'número de matricula': ' ', 'português': ' ', 'matematica': ' ', 'hístoria': ' ', 'geografia': ' ', 'ciências': ' ', 'artes': ' ', 'ingles': ' ', 'educaçao fisica': ' ', 'identidade e cultura': ' '}
 
+def limpeza():
+    if os.name == 'nt':
+        os.system("cls")
+    else:
+        os.system("clear")
 while True:
     print(linha)
     print('Bem vindo ao colégio viver para aprender'.center(67))
@@ -17,7 +23,7 @@ while True:
     print(linha)
     print(vazio)
     escolha = int(input('Digite aqui sua escolha: '))
-    os.system('clear') or None
+    limpeza() or None
     if escolha == 1:
         print(linha)
         print('Bem vindo a coordenação do colégio viver para aprender '.center(67))
@@ -29,7 +35,7 @@ while True:
         print('Professor cadastrado com sucesso !')
         time.sleep(1)
         print(vazio)
-        os.system('clear') or None
+        limpeza() or None
     elif escolha == 2:
         print(linha)
         print('Bem vindo a sala dos professores'.center(67))
@@ -42,7 +48,7 @@ while True:
             print(vazio)
             print(linha) 
             escolha1 = int(input('Digite aqui sua escolha: '))
-            os.system('clear') or None
+            limpeza() or None
             if escolha1 == 1:
                     print(linha)
                     print('Bem vindo a sala dos professores'.center(67))
@@ -65,7 +71,7 @@ while True:
                     alunos['identidade e cultura'] = float(input('Digite aqui a nota do aluno em identidade e cultura: '))
                     print(vazio)
                     print(linha)
-                    os.system('clear') or None
+                    limpeza() or None
     elif escolha == 3:
          print(linha)
          print('Bem vindo a sala do aluno'.center(67))
@@ -80,7 +86,7 @@ while True:
            print(vazio)
            print('Digite 1 se você deseja ver as notas do aluno')
            escolha3 = int(input('Digite aqui sua escolha: '))
-           os.system('clear') or None
+           limpeza() or None
            if escolha3 == 1:
                print(linha)
                print('Bem vindo a sala do aluno'.center(67))
@@ -89,5 +95,5 @@ while True:
                for chave, valor in alunos.items():
                    print(chave, valor)
     opção = str(input('Digite [S] se você deseja continuar ou digite [N] se você deseja encerrar o programa: '))
-    os.system('clear') or None
+    limpeza() or None
    
